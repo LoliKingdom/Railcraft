@@ -24,18 +24,5 @@ public class ModuleThaumcraft extends RailcraftModulePayload {
             throw new MissingPrerequisiteException("Thaumcraft not detected");
     }
 
-    public ModuleThaumcraft() {
-        add(
-//                RailcraftItems.CROWBAR_THAUMIUM,
-//                RailcraftItems.CROWBAR_VOID
-        );
-        setEnabledEventHandler(new ModuleEventHandler() {
-
-            @Override
-            public void postInit() {
-//                ThaumcraftPlugin.registerAspects();
-//                ThaumcraftPlugin.setupResearch();
-            }
-        });
-    }
+    public ModuleThaumcraft() { }
 }

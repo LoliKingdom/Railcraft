@@ -10,20 +10,19 @@
 package mods.railcraft.common.util.crafting;
 
 import com.google.common.base.Preconditions;
-import mods.railcraft.api.crafting.Crafters;
 import mods.railcraft.api.crafting.IBlastFurnaceCrafter;
 import mods.railcraft.api.crafting.ISimpleRecipe;
 import mods.railcraft.common.blocks.aesthetics.generic.EnumGeneric;
 import mods.railcraft.common.items.ItemCoke;
 import mods.railcraft.common.items.RailcraftItems;
 import mods.railcraft.common.plugins.forge.FuelPlugin;
-import mods.railcraft.common.plugins.thaumcraft.ThaumcraftPlugin;
 import mods.railcraft.common.util.collections.CollectionTools;
 import mods.railcraft.common.util.inventory.InvTools;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -42,7 +41,7 @@ public enum BlastFurnaceCrafter implements IBlastFurnaceCrafter {
                 .name("railcraft:fuel_coke")
                 .time(ItemCoke.COKE_HEAT)
                 .register();
-        newFuel(ThaumcraftPlugin.ITEMS.get("alumentum", 0)).name("thaumcraft:alumentum").register();
+        newFuel(ForgeRegistries.ITEMS.getValue(new ResourceLocation("thaumcraft", "alumentum"))).name("thaumcraft:alumentum").register();
         newFuel(EnumGeneric.BLOCK_COKE.getStack()).name("railcraft:block_coke").register();
         newFuel(new ItemStack(Items.COAL, 1, 1)).name("minecraft:charcoal").register();
         newFuel(RailcraftItems.FIRESTONE_REFINED).time(stack -> stack.getItem().getItemBurnTime(stack)).register();
