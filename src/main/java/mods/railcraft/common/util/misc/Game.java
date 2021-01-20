@@ -59,8 +59,7 @@ public final class Game {
     private static ILogger NULL_LOGGER = new ILogger() {};
 
     static {
-        Object obj = Launch.blackboard.get("fml.deobfuscatedEnvironment");
-        OBFUSCATED = !(obj instanceof Boolean && ((Boolean) obj));
+        OBFUSCATED = false;
         DEVELOPMENT_VERSION = Railcraft.getVersion().matches(".*(alpha|beta|rc).*") || !OBFUSCATED;
         boolean foundBukkit = false;
         try {
